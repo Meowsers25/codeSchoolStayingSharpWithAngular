@@ -1,0 +1,4 @@
+By default, directives use their parents' scope.
+
+True X
+False
