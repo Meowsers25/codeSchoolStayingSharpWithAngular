@@ -1,0 +1,6 @@
+What $http method is used for updating existing data?
+
+$http.put X
+$http.post
+$http.get
+$http.delete
