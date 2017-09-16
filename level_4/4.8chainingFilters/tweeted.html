@@ -1,0 +1,19 @@
+<!--The notes tweeted page has a search field so that users can filter notes. Let's take advantage of this:
+add an additional filter to the displayed notes on our notes tweeted page.-->
+
+<div class="note-wrapper">
+  <div class="note-content">
+    <div class="notes-header">
+      <h1 title="Notes">Tweeted Notes</h1>
+      <input type="search" ng-model="searchTerm"/><label>Search</label>
+    </div>
+
+    <div class="note-wrapper">
+      <a class="card-notes" ng-repeat="note in notes | filter: {tweeted: true} | filter: searchTerm" ng-href="#/notes/{{note.id}}">
+        <div class="card" title="{{note.title}}">
+          <h2 class="h3">{{note.title}}</h2>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>

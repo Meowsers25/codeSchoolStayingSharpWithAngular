@@ -1,0 +1,30 @@
+<!--The tweetedDate is now being displayed on each tweeted note card.
+Let's format it! See the AngularJS documentation for the appropriate
+elements to compose the format string.-->
+
+<div class="note-wrapper">
+  <div class="note-content">
+    <div class="notes-header">
+      <h1 title="Notes">Tweeted Notes</h1>
+      <input type="search" ng-model="searchTerm"/><label>Search</label>
+    </div>
+
+    <div class="note-wrapper">
+      <a class="card-notes" ng-repeat="note in notes | filter: {tweeted: true}" ng-href="#/notes/{{note.id}}">
+          
+          <!--It's the middle of the night and you are ready to finish your AngularJS NoteWrangler app!
+          You realize the title of our card container div would be more beneficial if it included a fancy
+          date along with the title of the note.
+
+          Add the date to the end of the title attribute with another pair of double brackets.
+          Format the date inside the brackets like so: Oct. 08.-->
+        <div class="card" title="{{note.title}} {{note.tweetedDate | date: 'MMM dd'}}">
+          <h2 class="h3">{{note.title}}</h2>
+          
+          <!--Use a filter to display the tweeted date in our p tag like so: Tweeted on a Monday in October.-->
+          <p>{{ note.tweetedDate | date:"'Tweeted on a' EEEE 'in' MMMM"}}</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
